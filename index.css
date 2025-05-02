@@ -57,72 +57,78 @@ body {
     }
 }
 
-/* Header */
+/* أساسيات */
 header {
     background-color: #0B9586;
+    color: white;
     padding: 10px;
-    color: #fff;
+}
 
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        nav {
-            ul {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                list-style: none;
+.logo img {
+    width: 100px;
+}
 
-                li {
-                    a {
-                        margin-right: 20px;
-                        text-decoration: none;
-                        color: #000;
-                    }
+/* القائمة */
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
 
-                    @media (max-width: 768px) {
-                        a {
-                            font-size: 12px;
-                        }
-                    }
-                }
-            }
-        }
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* زر القائمة للموبايل */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* إخفاء checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* للهواتف */
+@media (max-width: 768px) {
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
     }
 
-    .logo {
-        img {
-            width: 100px;
-            text-align: left;
-            margin: 0;
-        }
+    /* عرض القائمة لما يكون checkbox مفعل */
+    #menu-toggle:checked+.menu-icon+.nav ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
     }
 
     .call {
+        display: inline;
+
         h1 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 400;
-            text-align: right;
+            line-height: 24px;
+            text-align: center;
         }
-
-        p {
-            font-size: 24px;
-            font-weight: 700;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .call {
-            h1 {
-                font-size: 12px;
-            }
-
-            p {
-                font-size: 18px;
-            }
-        }
+        
     }
 }
 
